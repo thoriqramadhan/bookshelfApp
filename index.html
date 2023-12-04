@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="app.js" defer></script>
+    <title>BookshelfApps</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="header-title">Input new books</h2>
+
+        <form id="form" class="form">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" minlength="3" maxlength="30" required class="shadow">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" required class="shadow">
+            <label for="publish_at">Published At</label>
+            <input type="number" name="publish_at" id="publish_at" required class="shadow">
+            <div class="doneReading">
+                <label for="doneReading" id="doneLabel">Done reading</label>
+                <input type="checkbox" name="done" id="doneReading">
+            </div>
+            <button id="submitButton">Input the book to the list</button>
+        </form> 
+    </div>
+    <div class="container searchContainer">
+        <div class="search-title">
+            <h2 class="header-search">Search</h2>
+            <input type="text" name="search" id="search" placeholder="Input same title..." onkeyup="search()">
+        </div>
+        <div class="searchlist list">
+            
+        </div>
+
+    </div>
+    <div class="editModal hideModal">
+        <div class="editContainer">
+            <div class="header-title edit-header">Edit book</div>
+            <form class="form editForm">
+                <label for="editTitle">Title</label>
+                <input type="text" name="editTitle" id="editTitle" required minlength="3">
+                <label for="editAuthor">Author</label>
+                <input type="text" name="editAuthor" id="editAuthor" required>
+                <label for="editPublish">Publish at</label>
+                <input type="number" name="editPublish" id="editPublish" required>
+                <div class="editButtonContainer">
+                    <button type="button" class="btn closeBtn">Close</button>
+                    <button type="submit" class="btn saveBtn">Save Change</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="uncomplete-title">
+            <h2 class="header-title">Unfinished book <span class="uncompleteCount">List : </span></h2>
+        </div>
+        <div class="uncomplete-list list">
+            
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="complete-title">
+            <h2 class="header-title">Finished book <span class="completedCount">List : </span></h2>
+        </div>
+        <div class="complete-list list">
+
+        </div>
+    </div>
+</body>
+</html>
